@@ -1,20 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    int num1, num2, sum;
-
-    // Input two numbers
-    printf("Enter first number: ");
-    scanf("%d", &num1);
-
-    printf("Enter second number: ");
-    scanf("%d", &num2);
-
-    // Add the numbers
-    sum = num1 + num2;
-
-    // Display the result
-    printf("The sum is: %d\n", sum);
-
+int main(int argc, char *argv[]) {
+    if (argc < 3) {
+        printf("Usage: add <num1> <num2>\n");
+        return 1;
+    }
+    int num1 = atoi(argv[1]);
+    int num2 = atoi(argv[2]);
+    printf("The sum is: %d\n", num1 + num2);
     return 0;
 }
